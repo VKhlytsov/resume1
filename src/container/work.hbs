@@ -45,7 +45,8 @@
                         <br>
                         
                         <ul>
-                            {{#each projects}}
+                            {{#with projects}}
+                            <ul>
                             <li>
                                  <div>{{> link text=name href=url blank=true noLine=true}}</div>
                              
@@ -58,23 +59,25 @@
                                 <br>
 
                                 <div>
-                                    <em>Project stacks ({{stackAmount}})</em>
+                                    <em>Project stacks ({{stackAmount}}) </em> 
                                 </div>
 
                                 <br>
 
                                 <div>
-                                    <ul>
+                                    
                                         {{#each stacks}}
+                                        <ul>
                                         <li>{{name}}</li>
+                                        </ul>
                                         {{/each}}
-                                    </ul>
+                                
                                 </div>
 
                                 <br>
 
                                 <div>
-                                    <em>Project awards ({{awardAmount}})</em>
+                                    <em>Project awards ({{awardAmount}}) </em> 
                                 </div>
 
                                 <br>
@@ -88,10 +91,10 @@
                                 </div>
 
                             </li>
-                            {{/each}}
+                            {{/with}}
                         </ul>
                     </li>
-                    <br>
+                    
                 {{/each}}
                 </ul>
             </div>

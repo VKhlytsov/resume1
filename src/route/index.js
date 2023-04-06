@@ -169,8 +169,9 @@ router.get('/work', function (req, res) {
           },
           duration: {
             from: '10.10.2022',
-            to: null,
+            to: '',
           },
+
           projectAmount: 3,
 
           projects: {
@@ -191,12 +192,9 @@ router.get('/work', function (req, res) {
               {
                 name: 'Preparing SEO optimized pages. The automated progress of getting data for the app from documents.',
               },
-              {
-                name: 'Preparing SEO optimized pages. The automated progress of getting data for the app from documents.',
-              },
             ],
             stackAmount: 4,
-            awardAmount: 3,
+            awardAmount: 2,
           },
         },
       ],
