@@ -1,0 +1,86 @@
+   {{!-- 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ --}}
+
+<div>
+  {{#with person}}
+   <div> <h1>{{name}}</h1> </div>
+   <em> age: {{age}} </em>
+   <div> <br> <em> gender: {{gender}} </em> </div>
+
+   {{#with address}}
+   <div>
+    <br> <address>  
+     address:{{street}}, {{city}}, state {{state}}, zip {{zip}}, {{country}} 
+    </address>
+    <hr>
+    </div>
+   {{/with}}
+
+{{#each education}}
+   {{> title data='Education:'}}
+<div> degree: {{degree}} </div>
+<br> major: {{major}} 
+<div> <br> university: {{university}} </div>
+<div> <br> graduation Year: {{graduationYear}} <hr></div>
+{{/each}}
+
+{{#each workExperience}}
+  {{> title data='Work Experience:'}}
+<div> Company name: {{company}} </div>
+<div> <br> Title: {{title}} </div>
+<div> <br> Start date: {{startDate}} </div>
+<div> <br> End date: {{endDate}}</div> 
+<div> <br> Responsibilities: {{responsibilities}}</div> 
+<div> <br> Year_founded: {{year_founded}}</div> 
+<div> <br> Industry: {{industry}}</div> 
+{{#each employees}}
+<div>
+<br>
+Employees: {{name}} - {{position}}, {{department}} department 
+</div>
+<br>
+<summary><ins><strong>Projects 1</strong></ins></summary>
+{{#each projects}}
+<div> <br> {{name}} - description of the project: {{description}} </div>
+<div> <br> Status: {{status}} </div>
+{{#each teams}}
+<div> <br> Team name: {{team_name}} </div>
+{{#with team_leader}}
+<div> <br> {{title}} - {{name}}, email: {{email}} </div>
+{{/with}}
+{{#each team_members}}
+<div> <br> {{title}} - {{name}}, skills: {{skills}}, email: {{email}} </div>
+<br>
+<summary><ins><strong>Projects 2</strong></ins></summary>
+{{#each projects}}
+<div> <br> {{name}} - description of the project: {{description}} </div>
+<div> <br> Technologies: {{ technologies}} </div>
+<br>Team members:
+<br>
+{{#each team_members}}
+<br>
+<li>{{name}} - {{title}}</li>
+{{/each}}
+{{/each}}
+<hr>
+{{/each}}
+{{/each}}
+
+{{/each}}
+
+
+{{/each}}
+
+{{/each}}
+
+   {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
+
+ 
