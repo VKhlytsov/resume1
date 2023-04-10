@@ -1,0 +1,134 @@
+<main>
+<div>{{> title data="WEB Technologies" big=true}}</div>
+<hr>
+{{#with web}}
+<div>
+{{#with languages.[0]}} 
+<h3><a>Title:</a> <ins><i>{{name}}</i></ins></h3>
+<strong>Version: </strong> <a>{{version}}</a>
+<br>
+<br>
+<strong>Description</strong> - <q>{{description}}</q>
+<br>
+<br>
+<details open>
+<summary>
+<ins><strong>Teg and values:</strong></ins>
+</summary>
+{{#each elements}} 
+<br>
+<strong>Teg</strong> - <a>{{name}}</a>
+<br>
+<br>
+<strong>Description</strong> - <q>{{description}}</q>
+</details>
+<br>
+<details>
+<summary>
+<ins><strong>Attributes:</strong></ins>
+</summary>
+{{#each attributes}}
+<dl>
+<dt>
+<strong>Attribute</strong> : <i>{{name}}</i>
+</dt>
+<dt>
+<br>
+<strong>Description</strong> - <q>{{description}}</q>
+</dt>
+</dl>
+{{/each}}
+{{/each}}
+{{/with}}
+</details>
+</div>
+<hr>
+<div>
+{{#with languages.[1]}} 
+<h3><a>Title:</a> <ins><i>{{name}}</i></ins></h3>
+<b>Version:</b> <ins><strong>{{version}}</strong></ins>
+<br>
+<br>
+<strong>Description</strong> - <q>{{description}}</q>
+<br>
+<br>
+<details open>
+<summary>
+<ins><strong>Teg and values :</strong></ins>
+</summary>
+{{#each properties}} 
+<dl>
+<dt>
+<strong>Teg</strong> - <i>{{name}}</i>
+</dt>
+<dt>
+<strong>Description </strong> - <q>{{description}}</q>
+</dt> 
+<dd>
+<br>
+<details open>
+<summary>
+<ins><strong>Values:</strong></ins>
+</summary>
+{{#each values}}
+<dl>
+<dt>
+<strong>Values</strong> - <i>{{value}}</i>
+</dt>
+<dt>
+<strong>Description</strong> - <q>{{description}}</q>
+</dt>
+</dl>
+{{/each}}
+</details>
+</details>
+</dd> 
+</dl>
+{{/each}}
+{{/with}}
+</div>
+<hr>
+<div>
+{{#with languages.[2]}} 
+<h3><b>Title:</b>  <ins><i>{{name}}</i></ins></h3>
+<b>Version </b>  - <ins><strong>{{version}}</strong></ins>
+<br>
+<br> 
+<strong>Description</strong> - <q>{{description}}</q>
+<br>
+<br>
+<details open>
+<summary>
+<ins><strong>Teg and values :</strong></ins>
+</summary>
+{{#each functions}} 
+<dl>    
+<dt>
+<strong>Teg</strong> - <i>{{name}}</i>
+</dt>
+<dt>
+<strong>Description</strong> - <q>{{description}}</q>
+</dt> 
+</dl>
+{{#each parameters}}
+<dl>
+<dt>
+<strong>Name</strong> - <i>{{name}}</i>
+</dt>
+<dt>
+<strong>Type</strong> - <i>{{type}}</i>
+</dt>
+<dt>
+<strong>Description</strong> - <q>{{description}}</q>
+<hr>
+</dt>
+</dl>
+{{/each}}
+</dd> 
+</dl>
+{{/each}}
+</details>
+{{/with}}
+</div>
+{{/with}}
+</main>
