@@ -1,0 +1,59 @@
+<main>
+{{> title data="Excursion : " big=true}} 
+{{#with program.excursion}}
+<section>
+<ins> <h3> {{name}} </h3> </ins>
+{{#with location}}
+<i>Location : </i> {{city}}, {{country}}
+{{/with}}
+<br>
+<i>Date : </i> {{date}}
+<hr>
+</section>
+<section>
+<ins> {{> title data="Program : " big=false}} </ins>
+{{#with program.[0]}}
+<ol> Event title name - <ins><strong>{{name}}</strong></ins></ol>
+<ol> Event type - <ins><strong>{{type}}</strong></ins></ol>
+<ol> Duration - <ins><strong>{{duration}} hours</strong></ins></ol>
+{{#with details.museum}}
+<details open>
+<ol> <strong>Name of the place</strong> - <i>{{name}}</i></ol> 
+<summary>
+<ins><strong>Addresses :</strong></ins>
+</summary>
+{{#with location}}
+<ol><strong>City </strong>  -  <i>{{city}}, {{country}}</i></ol>
+<ol><strong>Address </strong> -  <i>{{address}}</i></ol>
+{{/with}}
+</details>
+<details open>
+<summary>
+<ins><strong>Exhibits :</strong></ins>
+</summary>
+{{#each exhibits}}
+<ol><strong>Exhibit </strong>  -  <i>{{name}}</i></ol>
+<ol><strong>Author </strong>  -  <i>{{artist}}</i></ol>
+<ol><strong>Information </strong> - <i>{{description}}</i></ol> 
+<hr>
+{{/each}}
+{{/with}}
+{{#with details.guide}}
+<strong>Audio Guide : </strong>
+<ol><strong>Title </strong> - <i>{{name}}</i> </ol>
+<ol><strong>Language </strong>- <i>{{language}}</i> </ol>
+<ol><strong>Rating </strong>- <i>{{rating}}</i> </ol>
+{{/with}}
+</details>
+{{/with}} 
+<hr>
+<section>
+<ins>{{> title data="Next Program Event : " big=false}}</ins>
+{{#with program.[1]}}
+<ol><b>Event title name - </b> <i>{{name}}</i></ol>
+<ol><b>Event type - </b> <i>{{type}}</i></ol>
+<ol><b>Duration - </b> <i>{{duration}} hours</i></ol> 
+</section>
+{{/with}}
+{{/with}}
+</main>
