@@ -1,0 +1,118 @@
+<main>
+<br>
+<div>
+<button type="button" class="btn btn-outline-secondary">
+<p class="display-4">{{name}}</p>
+</button>
+</div>
+<br>
+<div>
+<p class="fw-bold"><button type="button" class="btn btn-primary" disabled> History</button></p>
+</div>
+<div>
+<a>Name</a> - <b><ins>{{name}}</ins></b>
+</div>
+<div>
+{{#with history}}
+<a>Foundary year</a> - <b><ins>{{year}}</ins></b>
+<br>
+<a>Founder</a> - <b><ins>{{founder}}</ins></b>
+{{/with}}
+<br>
+<a>Description</a> - <b><ins>{{description}}</ins></b>
+</div>
+<div>
+<a>Types: </a> 
+{{#each types}} 
+<li><b><ins>{{this}}</ins></b></li>
+{{/each}}
+</div>
+<br>
+{{#with syntax}}
+<div class="btn-group">
+<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+<a>Syntax</a>
+</button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">
+<a>Variables - </a> 
+{{#each variables}} 
+<i><b><ins>{{this}}</ins></b></i>
+{{/each}}</a></li>
+<li><a class="dropdown-item" href="#">
+<a>Functions -</a>
+{{#each functions}}
+<i><b><ins>{{this}}</ins></b></i>
+{{/each}}</a></li>
+<li><a class="dropdown-item" href="#">
+<a>Conditionals -</a>
+{{#each conditionals}}
+<i><b><ins>{{this}}</ins></b></i>
+{{/each}}
+</a></li>
+<li><a class="dropdown-item" href="#">
+<a>Loops -</a> 
+{{#each loops}}
+<i><b><ins>{{this}}</ins></b></i>
+{{/each}}</a></li>
+<li><a class="dropdown-item" href="#">
+<a>Classes -</a> 
+{{#each classes}}
+<i><b><ins>{{this}}</ins></b></i>
+{{/each}}
+</ul>
+</div>
+<br>
+{{/with}}
+</div>
+<br>
+<div>
+<dl>
+<dd>
+<details>
+<summary>
+<a>Features:</a>
+</summary>
+{{#each features}} 
+<li><i><b><ins>{{this}}</ins></b></i></li>
+{{/each}}
+</details>
+</dd>
+</dl>
+</div>
+<div>
+<dd>
+<details>
+<summary>
+<a>Libraries:</a>
+</summary>
+{{#each libraries}} 
+<li><i><b><ins>{{this}}</ins></b></i></li>
+{{/each}}
+</details>
+</dd>
+</div>
+<div>
+<dl>
+<dd>
+<details>
+<summary>
+<a>Tools:</a>
+</summary>
+{{#each tools}} 
+<li><i><b><ins>{{this}}</ins></b></i></li>
+{{/each}}
+</details>
+</dd>
+</dl>
+</div>
+<div>
+<p class="fw-bold"><button type="button" class="btn btn-primary" disabled> Community</button></p>
+</div>
+<div>
+{{#each community}}
+<li> Title: {{name}} - Type: {{type}}</li>
+{{/each}}
+</div>
+<hr>
+</main>
