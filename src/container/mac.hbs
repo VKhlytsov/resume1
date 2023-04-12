@@ -1,0 +1,105 @@
+<main>
+<div class="row">
+<div class="bg-light"> 
+<div class="border-outline-info">
+<p class="display-6">{{name}}</p>
+</div>
+</div>
+</div>
+<div>
+<img src="https://content2.rozetka.com.ua/goods/images/big/229715713.jpg" alt="MacBookPro">
+<br>
+<br>
+<button type="button" class="btn btn-outline-primary">Категорія - {{category}}</button>
+<button type="button" class="btn btn-outline-primary">Операційна система - {{features.operating_system}}</button>
+<br>
+<br>
+<button type="button" class="btn btn-outline-primary">Опис - {{description}}</button>
+<br>
+<br>
+<button type="btn" class="btn btn-success">Ціна- {{price}}$</button>
+<br>
+<br>
+{{#with features.processor}}
+<h4>Процесор:</h4>
+<button type="button" class="btn btn-outline-primary">{{brand}}</button>
+<button type="button" class="btn btn-outline-primary">{{model}}</button>
+<button type="button" class="btn btn-outline-primary">{{speed}}</button>
+<button type="button" class="btn btn-outline-primary">{{cores}} Ядер</button>
+<button type="button" class="btn btn-outline-primary">Буфер {{cache}}</button>
+{{/with}}
+<br>
+<br>
+{{#with features.memory}}
+<h4>Пам'ять:</h4>
+<button type="button" class="btn btn-outline-primary">Тип {{type}}</button>
+<button type="button" class="btn btn-outline-primary">Розмір {{size}}</button>
+<button type="button" class="btn btn-outline-primary">Швидкість {{speed}}</button>
+<br>
+<br>
+{{/with}}
+{{#with features.storage}}
+<h4>Сховище:</h4>
+<button type="button" class="btn btn-outline-primary">Тип носія {{type}}</button>
+<button type="button" class="btn btn-outline-primary">Об'єм сховища {{size}} </button>
+<br>
+<br>
+{{/with}}
+{{#with features.display}}
+<h4>Дісплей:</h4>
+<button type="button" class="btn btn-outline-primary">Розмір дісплея {{size}}</button>
+<button type="button" class="btn btn-outline-primary">Роздільна здатність {{resolution}}</button>
+<button type="button" class="btn btn-outline-primary">Виробник {{technology}}</button>
+<br>
+<br>
+<button type="button" class="btn btn-outline-primary">Схема кольору {{color_space}}</button>
+<button type="button" class="btn btn-outline-primary">Яскравість {{brightness}}</button>
+<button type="button" class="btn btn-outline-primary">Частота оновлення {{refresh_rate}}</button>
+{{/with}}
+<br>
+<br>
+{{#with features.graphics}}
+<h4>Графіка:</h4>
+<button type="button" class="btn btn-outline-primary">Виробник {{brand}}</button>
+<button type="button" class="btn btn-outline-primary">Модель {{model}}</button>
+<button type="button" class="btn btn-outline-primary">Об'єм пам'яті {{memory}}</button>
+<br>
+<br>
+{{/with}}
+{{#with features}}
+<h4>Порти:</h4>
+{{#each ports}}
+<button type="button" class="btn btn-outline-primary">{{type}} - {{count}}шт</button>
+<br>
+<br>
+{{/each}}
+{{/with}}
+{{#with features.battery}}
+<h4>Батарея:</h4>
+<button type="button" class="btn btn-outline-primary">Тип {{type}} </button>
+<button type="button" class="btn btn-outline-primary">Ємність {{capacity}}</button>
+<button type="button" class="btn btn-outline-primary">Без заряду {{life}}</button>
+<br>
+<br>
+{{/with}}
+{{#with features}}
+<h4>Розмір та вага:</h4>
+<button type="button" class="btn btn-outline-primary">Вага {{weight}} </button>
+{{#with dimensions}}
+<button type="button" class="btn btn-outline-primary">Висота {{height}}</button>
+<button type="button" class="btn btn-outline-primary">Ширина {{width}}</button>
+<button type="button" class="btn btn-outline-primary">Довжина {{depth}}</button>
+<br>
+{{/with}}
+{{/with}}
+<br>
+{{#with features}}
+<h4>Аксесуари:</h4>
+{{#each accessories}}
+<br><br>
+<button type="button" class="btn btn-outline-secondary">{{name}}</button>
+<button type="btn" class="btn btn-success">{{price}} $</button>
+{{/each}}
+{{/with}} 
+</div>
+</main> 
