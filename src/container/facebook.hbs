@@ -1,0 +1,77 @@
+<main>
+<div>
+<p class="fs-1">{{name}}</p>
+{{#each users}}
+<table class="border ">
+<tr class="border">
+<td>
+<div><em class="fs-2 bg-success">Друзі</em> </div>
+<p class="fw-semibold">ID -{{id}}</p>
+<p class="fw-semibold">Ім'я -{{name}}</p>
+<p class="fw-medium">Стать -{{gender}}</p>
+<p class="fw-normal">Вік -{{age}}</p>
+</td>
+<td>
+    <table class="border">
+        <tr class="border">
+            <td></td>{{#each friends}}
+            <td class="border">
+             <div><em class="fs-3 bg-primary">Cпільні друзі</em> </div>  
+
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+            </td>{{/each}} {{#with friends.[0]}}
+{{#each mutual_friends}}
+            <td class="border">
+                <div><em class="fs-2 bg-secondary"> Ви можете їх знати</em> </div> 
+               
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+
+</td>{{/each}}
+{{/with}}
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<hr>
+</div>
+{{/each}}
+
+<table class="border">
+    <tr class="border">
+        <td class="border"><em class="fs-2 bg-success">Групи</em></td>
+        <td></td>
+        <td class="border"><em class="fw-normal">Користувачі </em></td>
+    </tr>
+    {{#each users.[0].groups}}
+    <tr class="border">
+        <td></td>
+        <td class="border">
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Назва: {{name}}</p>
+<p class="fw-medium">Опис: {{description}}</p>
+
+        </td>
+        {{#each members}}
+        <td class="border">
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+        </td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
+
+</main>
