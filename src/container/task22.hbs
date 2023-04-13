@@ -1,0 +1,78 @@
+<main>
+{{#with page_header}}
+<h1 class="text-center">{{title}}</h1>
+<br>
+<p class="text-center text-uppercase">{{description}}</p>
+{{/with}}
+<div class="card">
+<div class="card-body">
+{{#with section.about_us}}
+<p class="display-6 fw-normal text-end">{{title_list.main}}</p>
+<h2 class="text-end">{{title_list.sub}}</h2>
+<button type="button" class="btn btn-outline-info btn-lg">{{button.text}}</button>
+{{/with}}
+</div>
+</div>
+<br>
+<div class="card">
+<div class="card-body">
+{{#with section.advantage}}
+<p class="display-5 fw-normal text-muted">{{title}}</p>
+<div class="card">
+<div class="card-body">
+    {{#with efficiency}}
+<p class="display-4 fw-normal text-muted">{{title}}</p>
+<h6 class="text-start">{{sub_title}}</h6>
+<p class="fs-6 text-start">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-lg">{{button}}</button>
+{{/with}}
+</div>
+</div>
+<br>
+<div class="card">
+<div class="card-body">
+{{#with innovation}}
+<p class="display-4 fw-normal text-muted text-center">{{title}}</p>
+<h6 class="text-start text-center">{{sub_title}}</h6>
+<p class="fs-6 text-start text-center">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-md">{{button}}</button>
+{{/with}} 
+</div>
+</div>
+<br>
+<div class="card">
+<div class="card-body">
+{{#with collaboration}}
+<p class="display-4 fw-normal text-muted text-end">{{title}}</p>
+<h6 class="text-start text-end">{{sub_title}}</h6>
+<p class="fs-6 text-start text-end">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-sm">{{button}}</button>
+{{/with}} 
+</div>
+</div>
+</div>
+</div>
+{{/with}} 
+<br>
+<div class="card">
+<div class="card-body">
+{{#with section.agreement}}
+<p class="display-5 fw-normal">{{title}}</p>
+<div class="card">
+<div class="card-body">
+{{#with info}}
+<h5 class="text-start">{{sub_title}}</h5>
+<br>
+<div class="card">
+<div class="card-body">
+<p class="fs-6 text-start">{{detail.text}}</p>
+<button type="button" class="btn btn-success"> {{detail.button}} </button>
+{{/with}}
+</div>
+</div>
+</div>
+</div>
+{{/with}}
+</div>
+</div>
+</main>     
