@@ -1,0 +1,85 @@
+<main>
+<div class="card">
+<div class="card-body">
+{{#with heading.main}}
+<div class="card">
+<div class="card-body">
+<h1>{{title}}</h1>
+<p class="text-md-start text-muted">{{text}}</p>
+<button class="btn btn-primary"> {{button_text.solid}} </button>
+<br>
+<br>
+<button class="btn btn-outline-primary"> {{button_text.outline}}</button>
+{{/with}}
+</div>
+</div>
+<br>
+{{#with heading.second}}
+<div class="card">
+<div class="card-body">
+<h2>{{title}}</h2>
+<p class="text-md-start text-muted">{{text}}</p>
+<button class="btn btn-secondary"> {{button_text.solid}} </button>
+<br>
+<br>
+<button class="btn btn-outline-secondary"> {{button_text.outline}}</button>
+{{/with}}
+</div>
+</div>
+<br>
+{{#with heading.subblock}}
+<div class="card">
+<div class="card-body">
+<h3>{{title}}</h3>
+<p class="text-md-start text-muted">{{text}}</p>
+<button class="btn btn-dark"> {{button_text.solid}} </button>
+<br>
+<br>
+<button class="btn btn-outline-dark"> {{button_text.outline}}</button>
+{{/with}}
+</div>
+</div>
+</div>
+</div>
+<br>
+{{#with nested_display}}
+<div class="card">
+<div class="card-body">
+<div class="display-1 fw-semibold">{{title}}</div>
+<br>
+<div class="card">
+<div class="card-body">
+<div class="display-4 fw-normal">{{children_display.title}}</div>
+<br>
+<p class="text-md-start text-muted">{{children_display.text}}</p> 
+<button class="btn btn-outline-warning fw-semibold"> {{children_display.button.text}}</button>
+{{/with}}
+</div>
+</div>
+<br>
+{{#with nested_display}}
+<h6>{{header_text}}</h6>
+<br>
+<button class="btn btn-info text-light"> {{button.text}} </button>
+{{/with}}
+</div>
+</div>
+<br>
+{{#with paragraph}}
+<div class="card">
+<div class="card-body">
+<p class="text-uppercase fs-5"> {{title}}</p>
+<p class="text-lowercase fs-6 text-muted"> {{text}}</p>
+<a href="{{button.url}}" class="btn btn-link">{{button.text}}</a>
+<div class="card">
+<div class="card-body">
+{{#each list_name}}
+<li><a href="{{url}}">{{text}}</a></li> 
+<br>
+{{/each}}
+{{/with}}
+</div>
+</div>
+</div>
+</div>
+</main> 
