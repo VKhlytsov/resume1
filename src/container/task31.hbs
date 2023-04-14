@@ -1,0 +1,242 @@
+<main>
+{{#with navigation}}
+<section class="col-12"> 
+<div class="row g-12">
+<div  class="card">  
+<div  class="card-body"> 
+{{#each links}}
+<a class="btn btn-link" href="{{href}}">{{text}}</a>
+{{/each}}
+<a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+</div>
+</div>  
+</div>
+</section>
+{{/with}}
+
+{{#with header}}
+<section class="col-12"> 
+<div class="row g-12">
+<div  class="card">  
+<h1 class="card-title">{{title}}</h1>  
+<div  class="card-body"> 
+<p class="fs-6 text-start">{{description}}</p>       
+<a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+</div>
+</div>  
+</div>
+</section>
+{{/with}}
+
+{{#with city}}
+<section>
+<div class="row g-2">
+<div>
+<h2 class="card-title">{{title}}</h2>  
+</div> 
+{{#each cards}}
+<div class="col-6">   
+<div class="card">
+<div class="card-img-top">
+{{#with picture}}
+<img class="card-img" src="{{src}}" alt="{{alt}}">
+{{/with}}
+</div>
+<div class="card-title">
+<p class="display-6">{{title}}</p>
+</div>
+<div class="card-body">
+<p class="fs-6">{{description}}</p>
+<a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+</div>
+</div>
+</div>
+{{/each}}
+</div>
+</section>
+{{/with}}
+
+
+{{#with winner}}
+<h2 class="text-start">{{title}}</h2>
+<div class="col-12">
+<table class="table">
+<thead>
+    <tr>
+{{#each table.head}}
+<th>{{this}}</th>
+{{/each}}
+</tr>
+</thead>
+<tbody>
+{{#each table.user}}
+<tr>
+<td>{{place}}</td>
+<td>{{name}}</td>
+<td>{{surname}}</td>
+<td>{{nickname}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</div>
+{{/with}}
+
+{{#with gallery}}
+<h2 class="text-start">{{title}}</h2>
+<div class="col-6">
+<table class="table table-stirped">
+<thead>
+{{#each cards}}
+<th>{{name}}</th>
+</thead>
+
+<tbody>
+{{#each items}}
+<tr>
+<td>{{this}}</td>
+</tr>
+{{/each}}
+</tbody>
+{{/each}}
+</table>
+</div>
+{{/with}}
+
+<section>
+{{#with relaxion}}
+<div class="row gx-2 gy-4">
+<div>
+<p class="display-3">{{title}}</p>
+</div> 
+{{#each cards}}
+<div class="col-6">   
+<div class="card text-bg-secondary">
+<div class="card-header text-start">
+<p class="fs-1">{{header}}</p>
+</div>  
+<div class="card-body">
+<div class="card-title text-start">
+<p class="fs-4">{{title}}</p>
+</div>
+<p class="fs-6">{{description}}</p>
+</div>
+</div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+</section>
+
+<section>
+{{#with rest}}
+<div class="row g-3">
+{{#each cards}}
+<div class="col-6">   
+<div class="card text-center">
+<div class="card-header text-center">
+<p class="fs-1">{{header}}</p>
+</div>  
+<div class="card-body text-center">
+<p class="card-title fs-4">{{title}}</p>
+<p class="fs-6">{{description}}</p>
+<div>
+<a class="btn btn-primary">{{button}}</a></div>
+</div>
+<div class="card-footer">
+<p class="fs-6">{{footer}}</p>
+</div>
+</div>
+</div>
+{{/each}}
+</div>
+{{/with}}
+</section>
+
+
+<section>
+<div class="row g-3"> 
+{{#with proposition}}
+<div>
+<p class="display-2">{{title}}</p>
+</div>
+{{#each card}} 
+<div class="col-6">
+<div class="card text-light bg-warning text-start">
+<div class="card-header text-start">{{header}}</div>
+<div class="card-body text-start"> 
+<p class="card-title fs-4">{{title}}</p>
+<p class="fs-6">{{description}}</p>
+</div>
+</div> 
+</div>
+{{/each}}
+{{/with}}
+</div>
+</section>
+
+{{#with footer}}
+<div class="row">
+<h5 class="text-start">{{title}}</h5>
+<div class="col-4">
+<ul>
+{{#each navigation}}
+<li class="list-group-item">
+<p class="btn btn-link" href="{{href}}">{{text}}</p>
+</li> 
+{{/each}}
+</ul>
+</div>
+<div class="col-4">
+<ul>
+{{#each socialMedia}}
+<li class="list-group-item">
+<p class="btn btn-outline-dark" href="{{link}}">{{name}}</p>
+</li> 
+{{/each}}
+</ul>
+</div>
+<div class="col-4">
+<ul>
+{{#each partners}}
+<li class="list-group-item">
+<p class="btn btn-outline-info" href="{{link}}">{{name}}</p>
+</li> 
+{{/each}}
+</ul>
+</div>
+</div>
+{{/with}}
+
+{{!-- {{#with navigation}}
+<section class="col-12"> 
+<div class="row g-12">
+<div  class="card">  
+<div  class="card-body"> 
+<nav class="navbar navbar-expand-lg bg-body-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            {{#each links}}
+          <a class="nav-link active" aria-current="page" href="{{href}}">{{text}}</a>
+                   </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{{text}}">{{text}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{text}}">{{text}}</a>
+        </li>
+         {{/each}}
+       </ul>
+    </div>
+  </div>
+  {{/with}}
+</nav> --}}
+
+
+</main>
