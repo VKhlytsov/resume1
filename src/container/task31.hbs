@@ -85,23 +85,19 @@
 {{#with gallery}}
 <h2 class="text-start">{{title}}</h2>
 <div class="row gy-6 gx-2">
-   {{#each cards}}
+{{#each cards}}
 <div class="col-4">
-
 <div class="card">
-   
 <div class="card-header">
-
-  <div>{{name}}</div>
+<div>{{name}}</div>
 </div>
 <ul class="list-group">
-    {{#each items}}
-    <li class="list-group-item">
-      <a>{{this}}</a>
-    </li>
-    {{/each}}
-
-  </li>
+{{#each items}}
+<li class="list-group-item">
+<a>{{this}}</a>
+</li>
+{{/each}}
+</li>
 </ul>
 </div>
 </div>
