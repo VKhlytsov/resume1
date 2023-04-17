@@ -84,22 +84,28 @@
 
 {{#with gallery}}
 <h2 class="text-start">{{title}}</h2>
-<div class="col-6">
-<table class="table table-stirped">
-<thead>
-{{#each cards}}
-<th>{{name}}</th>
-</thead>
+<div class="row gy-6 gx-2">
+   {{#each cards}}
+<div class="col-4">
 
-<tbody>
-{{#each items}}
-<tr>
-<td>{{this}}</td>
-</tr>
+<div class="card">
+   
+<div class="card-header">
+
+  <div>{{name}}</div>
+</div>
+<ul class="list-group">
+    {{#each items}}
+    <li class="list-group-item">
+      <a>{{this}}</a>
+    </li>
+    {{/each}}
+
+  </li>
+</ul>
+</div>
+</div>
 {{/each}}
-</tbody>
-{{/each}}
-</table>
 </div>
 {{/with}}
 
