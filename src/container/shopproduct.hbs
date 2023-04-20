@@ -1,0 +1,39 @@
+<main>
+{{#with navigation}}
+<div class="card">
+<div class="card body">
+{{#each links}}
+<ul class="nav">
+<li class="nav-item">
+<a class="nav-link active" href="{{href}}">{{text}}</a>
+</li>
+{{/each}}
+{{#with links.[2]}}
+<li class="nav-item">
+<a class="nav-link disabled" href="{{href}}">{{text}}</a>
+</li>
+{{/with}}
+</ul>
+</div>
+</div>
+{{/with}}
+
+
+<div class="row pt-4">
+      {{#each breadcrumb}}
+      {{#if url}}
+<nav aria-label="breadcrumb">
+  
+  <ol class="breadcrumb">
+    
+    <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+  {{/if}}
+  {{#else url=null}}
+  <li class="breadcrumb-item disabled"><a href="{{url}}">{{name}}</a></li>
+  {{/else}}
+  </ol>
+</nav>{{/each}}
+</div>
+
+
+</main>
