@@ -1,0 +1,19 @@
+{{#with navigation}}
+<div class="card m-2">  
+{{#each links}}           
+<div class="nav">
+{{#if href}}    
+{{#if @last}}
+<li class="nav-item"> 
+<a class="nav-link disabled" href="{{href}}">{{text}}</a>
+</li> 
+{{else}}
+<li class="nav-item">
+<a class="nav-link active" href="{{href}}">{{text}}</a>
+{{/if}}
+{{/if}}
+{{/each}}
+</li>
+</div>
+</div>
+{{/with}}
