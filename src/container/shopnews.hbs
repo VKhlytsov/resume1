@@ -2,4 +2,30 @@
 
 {{>breadcrumb}}
 
+<div class="row ps-1 pe-2">
+{{#with newsData}}
+<div class="col-12">
+<div class="card">
+<img src="{{photo}}" class="card-img-top" alt="cats">
+<div class="card-body">
+{{#with head}}
+<div class="card-title fs-2 fw-semibold">{{heading}} </div>
+<p class="card-text fw-medium">{{description}}</p>
+{{/with}}
+{{#each body}}
+<li>
+<b class="text-start fs-6 fw-semibold">{{title}}.</b> 
+<div class="text-sm-start" >{{text}}</div>
+</li>
+{{/each}}
+</div>
+{{/with}}
+</div>
+</div>
+</div>
+
+{{>shoppost}}
+
+{{>shopaction}}
+
 </main>

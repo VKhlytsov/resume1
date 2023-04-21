@@ -34,49 +34,8 @@
 </div>
 {{/with}}
 
-{{#with newsBlock}}
-<section class="my-4">
-<div class="row text-center">
-<h2>{{title}}</h2>
-</div>
-<div class="row" >   
-{{#each cards}}
-<div class="col-3">
-<div class="row p-1">
-<div class="card bg-dark text-light" style="height: 45rem;">
-<div class="card-header py-1"> 
-<div class="row">
-<div class="col-6 text-start">
-<div class="row">
-{{#if isTop}} 
-<p> <span class="badge bg-danger rounded-pill text-start"> Top  </span></p>
-{{else}}
-{{/if}}
-</div>
-</div>    
-<div class="col-6">
-<div class="row text-end">
-{{#if isNew}} 
-<p>  <span class="badge bg-success rounded-pill text-end"> New  </span></p> 
-{{else}}  
-{{/if}}
-</div>
-</div>
-</div>
-</div>
-<div class="card-title text-center p-1">    
-<p class="fs-7 fw-bold text-normal">{{title}} </p>
-</div>
-<div class="card-body">
-<p>{{description}}</p>
-</div>
-</div>
-</div>
-</div> 
-{{/each}}
-</div>
-</section>
-{{/with}}
+{{>shoppost}}
+
 {{#with goodsBlock}}
 <div class="col-12">
 <div class="row">

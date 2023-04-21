@@ -1,0 +1,18 @@
+<div class="row mb-4 mt-4">
+{{#with newsBlock}}
+<h5 class="card-title fs-4 fw-semibold text-center mb-4">{{title}}</h5>
+{{#each cards}}  
+<div class="col-3">   
+<div class="card text-bg-dark">
+<div class="card-header">{{title}}
+{{#if isTop}}<span class="badge bg-danger">Top</span>{{/if}}
+{{#if idNew}}<span class="badge bg-success">New</span>{{/if}}
+</div>
+<div class="card-body">
+<p class="card-text">{{description}}</p>
+</div>
+</div>
+</div>
+{{/each}}
+{{/with}}
+</div>
