@@ -1,0 +1,13 @@
+{{#with subscribe}}
+<div class="card text-bg-dark mt-4 mb-4">
+<div class="card-boby">
+<h2 class="text-start m-2 mb-3">{{header}}</h2>
+<p class="fs-6 text-start p-2 mb-4">{{description}}</p>
+{{#each buttons}}
+<div class="col-3 m-2 mb-3">
+<a class="btn btn-primary" href="{{link}}">{{text}}</a>
+</div>
+{{/each}}
+</div>
+</div>
+{{/with}}
