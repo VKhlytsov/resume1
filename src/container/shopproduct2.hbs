@@ -1,0 +1,116 @@
+<main>
+
+{{>breadcrumb}}
+
+
+{{#with productData}}
+<div class="row ps-1 pe-2">
+<div class="col-12">
+<div class="card">
+<img class="card-img-top" src="{{img}}" alt="Зображення">
+</div>
+</div>
+</div>
+{{/with}}
+
+==================================
+<div class="card mt-2" style="width: 25rem;">
+<div class="card-body">
+{{#with productData.info}}
+<h5 class="card-title">{{title}}</h5>
+<p class="card-text">{{about}}</p>
+<h4 class="card-text fw-bold fs-3"> {{price}} </h4>
+{{#each category}}
+{{#if isHot}}
+<span class="badge rounded-pill bg-warning">{{name}}</span>
+{{/if}}
+{{#if isNew}}
+<span class="badge rounded-pill bg-primary">{{name}}</span>
+{{/if}}
+{{#if isBonus}}
+<span class="badge rounded-pill bg-info">{{name}}</span>
+{{/if}}
+{{/each}}
+{{/with}}
+</div>
+</div>
+===============================
+
+{{#with productData}}
+<div class="container mt-2">
+{{#with item}}
+<table class="table border table-striped">
+<thead>
+<tr class="border">
+{{#each head}}
+<th scope="col">{{this}}</th>
+{{/each}}
+</tr>
+</thead>
+<tbody>
+{{#each body}}
+<tr>
+<th class="border" scope="row">{{this.[0]}}</th>
+<td>{{this.[1]}}</td>
+<td>{{this.[2]}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+{{/with}}
+</div>
+{{/with}}
+
+
+=============================
+{{#with productData.param}}
+<div class="col-6">
+<ul class="list-group">
+  <li class="list-group-item list-group-item-secondary fw-medium text-dark">{{title}}</li>
+  {{#each list}}
+  <li class="list-group-item">{{this}}</li>
+  {{/each}}
+</ul>
+</div>
+{{/with}}
+
+=====================================
+
+{{#with productData.alert}}
+{{#if isError}} 
+<div class="alert alert-danger alert-dismissible fade fw-medium show mt-3" role="alert">
+{{text}}
+</div>
+{{/if}}
+{{/with}}
+
+=========================================
+
+<div class="card mt-3">
+  <div class="card-body"> 
+    {{#with productData}}
+    {{#each actionList}}
+    {{#if isWarning}} <button type="button" class="btn btn-warning text-light px-5">{{name}}</button>
+{{/if}}
+{{#if isError}}
+<button type="button" class="btn btn-outline-danger fw-semibold px-4 mx-2">{{name}}</button>
+{{/if}}
+{{#if isSuccess}}
+<button type="button" class="btn btn-success px-5 mx-2">{{name}}</button>  
+{{/if}}
+{{#if isGood}}
+<button type="button" class="btn btn-outline-success fw-semibold px-4 mx-2">{{name}}</button>
+  {{/if}}
+  {{/each}}
+  {{/with}}
+  </div>
+</div>
+
+=========================================
+
+{{>shopcard}}
+
+{{>shopaction}}
+
+
+</main>
