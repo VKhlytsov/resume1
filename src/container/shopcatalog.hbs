@@ -1,0 +1,90 @@
+<main>
+
+<div class="col-12">
+
+{{> breadcrumb}}
+
+<div class="row px-2 pb-3 pt-1">
+<h2>{{header}}</h2>
+</div>
+
+<div class="row px-2 pb-3">
+{{#each sortBlock}}
+<div class="col-3">
+<select class="form-select" aria-label="multiple select">
+<option selected>{{placeholder}}</option>
+{{#each options}}
+<option value="{{value}}">{{text}}</option>
+{{/each}}
+</select>
+</div>
+{{/each}}
+</div>
+
+<div class="row pt-4">
+
+<div class="col-4">
+{{#with filterBlock}}
+
+<div class="row  ps-4">
+
+<div class="col-12 rounded border">
+
+{{#with sellers}}
+
+{{> checkbox}}
+{{/with}}
+
+{{#with brands}}
+{{> checkbox}}
+{{/with}}
+
+{{#with price}}
+{{> checkbox}}
+{{/with}}
+
+{{#each filterList}}
+{{> checkbox}}
+{{/each}}
+
+</div>
+
+</div>
+
+{{/with}}
+
+</div>
+
+<div class="col-8">
+
+<div class="row px-3">
+<div class="col-12"> 
+
+<div class="row g-3 pb-3">  
+
+{{#each goodsList}}     
+
+<div class="col-6">
+
+{{> catalogItem}}
+
+</div>
+{{/each}}
+
+</div>
+</div>
+</div>
+    
+
+</div>
+
+</div>
+
+<div class="mt-4 p-2">
+{{>service}}
+<div class="border-bottom border-1 mt-4 pb-3"></div>
+</div>
+
+</div>
+
+</main>
