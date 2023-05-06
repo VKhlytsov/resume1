@@ -20,10 +20,10 @@
 {{/with}}
 </div>
 
-<div class="row mt-4 mb-5">
-<div class="col-5 position-absolute start-0 mb-3">  
+<div class="row mt-3 mb-5">
+<div class="col-8 position-absolute g-1">  
 {{#with purchase.actionBlock.input}}
-<div class="col-3 container input-group position-absolute mb-3">
+<div class="col-12 input-group position-absolute mb-3">
 <input type="text" class="form-control rounded m-2 mb-3" placeholder="{{placeholder}}">
 {{/with}}
 {{#with  purchase.actionBlock}}
@@ -44,67 +44,67 @@
 </div>
 <div class="border-bottom pb-3"></div>
 
-=========================================
 
+=================================
 
+<div class="row">
+<div class="col-12 mt-4 mb-4">  
 
- <div class="container-fluid col-12 row border-bottom rounded">
-
-<div class="container-fluid col-6 row ">
+<div class="card mb-4">
+<div class="row gy-2">
+<div class="col-4 p-3 pe-3">
 {{#with purchase}}
 {{#each itemList}}
-{{!-- Про товар --}}
-<div class="container-fluid row col-8 ">
-    <p class="fs-5">{{number}}</p>
-    <p class="fs-5">{{status}}</p>
-</div>
-{{!-- Про товар --}}
-
-
-
-
-
-{{!-- ціна --}}
-<div class="container-fluid row col-4 ">
-    {{#with amount}}
-    <p class="fs-5 fw-medium">{{title}}</p>
-    <p>{{value}}</p>
-    {{/with}}
-</div>
-{{!-- ціна --}}
-
-</div>
-
-<div class="container-fluid col-4 row">
-
-{{!-- Фото --}}
-    <div class="container-fluid col-12 row p-3  g-2">
-{{#each images}}
-        <div class="container-fluid col-4 row rounded d-block">
-    <img src="{{this}}" class="img-fluid img-thumbnail rounded d-block">
-    </div>
+<p class="fs-6">{{number}}</p>
+<h5 class="text py-1">{{status}}</h5>
 {{/each}}
-    </div>
-{{!-- Фото --}}
-
- </div>
-
-{{!-- Кнопки --}}
-        <div class="col-2">
-                         {{#with button}}
-                <div class="col-8 p-3">
-                       {{#if isPrimary}}
-                       <a href="{{link}}" class="btn btn-primary">{{text}}</a>
-                       {{else}}
-                       <a class="btn btn-secondary" disabled>{{text}}</a>
-                       {{/if}}
-                 
-                </div>
-                        {{/with}}
-                        {{/each}}
 {{/with}}
-        </div>
 </div>
+<div class="col-2">
+<div class="card-body">
+{{#with purchase}}
+{{#each itemList}}
+{{#with amount}}
+<p class="card-title">{{title}}:</p>
+<h5 class="card-text py-2">{{value}}</h5>
+{{/with}}
+{{/each}}
+{{/with}}
+</div>
+</div>
+
+<div class="col-md-4 p-4">
+{{#with purchase}}
+{{#each itemList}}
+{{#each images}}
+
+<img src="{{this}}" class="img m-2">
+
+{{/each}}
+{{/each}}
+{{/with}}
+<div class="card-body">
+</div>
+</div>
+
+<div class="col-2 p-2">
+{{#with purchase}}
+{{#each itemList}}
+{{#with button}}
+<div class="card-body">
+{{#if isPrimary}}
+<a href="{{link}}" class="btn btn-primary">{{text}}</a>
+{{/if}}
+</div>
+{{/with}}
+{{/each}}
+{{/with}}
+</div> 
+</div>
+</div>
+</div>
+</div>
+<div class="border-bottom pb-3"></div>
 
 ====================================
 
@@ -208,58 +208,56 @@
 
 
 
+<div class="card">
+<div class="card-title p-2">
+{{#with userInfo.contacts}}
+<p class="fs-3 fw-medium">{{title}}</p>
+</div>
 
-{{#with userInfo.contacts}} 
-<div class="row col-12 container border p-3 my-3 g-1"> 
-<p class="fs-3 fw-medium py-1">{{title}}</p> 
+<div class="row mb-2 p-2">
+<div class="col-4">
+<div class="card">
+<div class="card-body">
 {{#each contactData}}
-<div class="col-3 g-2 card card-body mx-1">
-    <p>{{title}}</p>
-   <p class="fw-medium">{{value}}</p>
-     
-                {{#with buttons}}
-                        {{#if isPrimary}}
-                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
-                        {{/if}}
-                {{/with}}    
-               
-
-</div>
-
-
-<div class="col-3 g-2 card card-body mx-1">
-   
-    <p>{{title}}</p>
-   <p class="fw-medium">{{value}}</p>
-       
-
-                {{#each buttons}}
-                        {{#if isPrimary}}
-                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
-                        {{/if}}
-                {{/each}}
-
-</div>
-
-
-<div class="col-3 g-2 card card-body mx-1">
-   
-    <p>{{title}}</p>
-   <p class="fw-medium">{{value}}</p>
-    
-  {{/each}}
-                {{#each buttons}}
-                        {{#if isPrimary}}
-                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
-                        {{/if}}
-                {{/each}}
-
-</div>
-
-</div>
+<p>{{title}}</p>
+<p>{{value}}</p>
+{{#with button}}
+{{#if isPrimary}}
+<a type="button" class="btn btn-primary" href="{{link}}">{{text}}</a>
+{{/if}}
+{{#if isSecondary}}
+<a type="button" class="btn btn-outline-secondary fw-semibold" href="{{link}}">{{text}}</a>
+{{/if}}
+{{#if isDanger}}
+<a type="button" class="btn btn-outline-danger fw-semibold" href="{{link}}">{{text}}</a>
+{{/if}}
 {{/with}}
-    </div>
+{{/each}}
+</div>
+</div>
+</div>
 
+<div class="col-4 ">
+<div class="card">
+<div class="card-body">
+<p>trter</p>
+</div>
+</div>
+</div>
+
+<div class="col-4">
+<div class="card">
+<div class="card-body">
+<p>trter</p>
+</div>
+</div>
+</div>
+
+{{/with}}
+
+</div>
+
+</div>
 
 
 </main>
